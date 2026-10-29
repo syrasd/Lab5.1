@@ -1,0 +1,1 @@
+kuch bhi change nahi karna bus is ka scroll remove kar do like home kai baad navbar main kisi ko bhi click karain tou scroll honay kai bajaye woh ussi area main merge ho jaye purani screen kai sath. kind of ab transitions sai pages open hon gai bus hum nai is ko aik single page website banani hai

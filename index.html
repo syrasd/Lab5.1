@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syeda Shafia Haider | Computer Science Student & Software Engineer</title>
+  <meta name="description" content="Portfolio of Syeda Shafia Haider - Computer Science Student & Software Engineer. 3D interactive multi-angle studio portfolio." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== SILKY-SMOOTH 360° BACKGROUND ENGINE ==================== -->
+  <div id="bg-stage">
+    <!-- Interactive Three.js depth canvas -->
+    <div id="three-canvas"></div>
+
+    <!-- 5 Studio Poses: ONLY ONE ANGLE ACTIVE AT A TIME -->
+    <!--
+      Mapping:
+      1. Home:      Left Profile (Face Left Side)
+      2. Skills:    Left Three-Quarter
+      3. Projects:  Front
+      4. Education: Right Three-Quarter
+      5. Contact:   Right Profile
+    -->
+    <div class="bg-angles-container">
+      <!-- 01: Home -> Left Profile -->
+      <div class="bg-angle-layer active" data-section="home" style="background-image: url('assets/images/bg-home-left-profile.jpg');"></div>
+      
+      <!-- 02: Skills -> Left Three-Quarter -->
+      <div class="bg-angle-layer" data-section="skills" style="background-image: url('assets/images/bg-skills-left-three-quarter.jpg');"></div>
+      
+      <!-- 03: Projects -> Front -->
+      <div class="bg-angle-layer" data-section="projects" style="background-image: url('assets/images/bg-projects-front.jpg');"></div>
+      
+      <!-- 04: Education -> Right Three-Quarter -->
+      <div class="bg-angle-layer" data-section="education" style="background-image: url('assets/images/bg-education-right-three-quarter.jpg');"></div>
+      
+      <!-- 05: Contact -> Right Profile -->
+      <div class="bg-angle-layer" data-section="contact" style="background-image: url('assets/images/bg-contact-right-profile.jpg');"></div>
+    </div>
+
+    <!-- Lateral Scrim: ensures sharp text contrast while right photoshoot shines -->
+    <div class="bg-gradient-scrim"></div>
+  </div>
+
+  <!-- ==================== CENTERED PILL NAVIGATION ==================== -->
+  <header class="top-navbar-wrapper">
+    <nav class="nav-pill-container" id="nav-pill-container">
+      <a href="#home" class="nav-item-link active" data-target="home">Home</a>
+      <a href="#skills" class="nav-item-link" data-target="skills">Skills</a>
+      <a href="#projects" class="nav-item-link" data-target="projects">Projects</a>
+      <a href="#education" class="nav-item-link" data-target="education">Education</a>
+      <a href="#contact" class="nav-item-link" data-target="contact">Contact</a>
+      
+      <!-- Theme Switcher Button -->
+      <button class="theme-switch-btn" id="theme-switch-btn" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main class="content-wrapper">
+
+    <!-- ==================== SECTION 01: HOME (LEFT PROFILE) ==================== -->
+    <section class="section-stage active" id="home">
+      <div class="hero-content-col">
+        <!-- Availability Badge -->
+        <div class="hero-badge-pill">
+          <span class="dot-green"></span>
+          <span>Open to internships &amp; collaborations</span>
+        </div>
+
+        <!-- Huge Display Headline -->
+        <h1 class="hero-name-headline">
+          SYEDA<br />SHAFIA HAIDER
+        </h1>
+
+        <!-- Role Subtitle -->
+        <div class="hero-subtitle-role">
+          Computer Science Student &amp; Software Engineer
+        </div>
+
+        <!-- Bio Paragraph -->
+        <p class="hero-bio-paragraph">
+          I turn tricky problems into clean, working software, from algorithms on paper to full-stack apps that real people can use.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-button-pair">
+          <a href="#projects" class="btn-custom btn-custom-primary">
+            <span>View my work</span>
+          </a>
+          <a href="#contact" class="btn-custom btn-custom-secondary">
+            <span>Get in touch</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 02: SKILLS (LEFT THREE-QUARTER) ==================== -->
+    <section class="section-stage" id="skills">
+      <div class="section-head-wrap">
+        <span class="section-mono-tag">01 / SKILLS</span>
+        <h2 class="section-display-title">Technical toolkit</h2>
+      </div>
+
+      <div class="skills-grid-layout">
+        <!-- Languages -->
+        <div class="tilt-card">
+          <div class="category-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>LANGUAGES</span>
+          </div>
+          <div class="pills-group">
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#00599C"/><path d="M11 8h-1.5a4.5 4.5 0 000 8H11v-2h-.8a2.5 2.5 0 010-4H11V8zm3 3h1.5v-1.5h1V11H18v1h-1.5v1.5h-1V12H14v-1zm4.5 0H20v-1.5h1V11h1.5v1H21v1.5h-1V12h-1.5v-1z" fill="#fff"/></svg></span>
+              <span>C++</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24"><path d="M11.9 2c-3.1 0-2.9 1.3-2.9 1.3l.01 1.4h3v.4H6.3S3 4.7 3 8.3s2.9 3.5 2.9 3.5h.9V10.5s-.1-1.3 1.3-1.3h5.2c1.2 0 1.2-1.2 1.2-1.2V3.3S14.9 2 11.9 2zm-1.6 1.1c.4 0 .8.4.8.8 0 .4-.4.8-.8.8-.4 0-.8-.4-.8-.8 0-.4.4-.8.8-.8z" fill="#387EB8"/><path d="M12.1 22c3.1 0 2.9-1.3 2.9-1.3l-.01-1.4h-3v-.4h5.7s3.3.4 3.3-3.2-2.9-3.5-2.9-3.5h-.9v1.3s.1 1.3-1.3 1.3h-5.2c-1.2 0-1.2 1.2-1.2 1.2v4.7s-.4 1.3 2.6 1.3zm1.6-1.1c-.4 0-.8-.4-.8-.8 0-.4.4-.8.8-.8.4 0 .8.4.8.8 0 .4-.4.8-.8.8z" fill="#FFE052"/></svg></span>
+              <span>Python</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8.5 17.5c2.5.5 5.5.5 7.5-.5M7 19.5c3.5 1 7.5 1 11-.5M10 14c-1-2 1-3 1.5-4 .5-1-.2-2-1-3 2 1 3 3 2 4.5-.8 1.2-1.5 2-1 2.5h-1.5z" stroke="#EA2D2E" stroke-width="2" stroke-linecap="round"/><path d="M14 13c-1-1.5.5-2.5 1-3.5.5-1 0-1.8-.8-2.5 1.5.8 2.5 2 1.5 3.5-.6.9-1 1.5-.7 2h-1z" stroke="#007396" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <span>Java</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M7 16.5c0 1.2 1 1.8 2.2 1.8 1.2 0 2.1-.7 2.1-2.1v-5.2h-1.5v5.1c0 .5-.3.8-.7.8-.4 0-.6-.3-.6-.7v-2.2H7v3.3zm6.3-1.3c.5.8 1.4 1.3 2.5 1.3 1 0 1.6-.5 1.6-1.1 0-.8-.7-1-1.6-1.4-1.3-.5-2.6-1.1-2.6-2.5 0-1.4 1.1-2.4 2.7-2.4 1.2 0 2.1.5 2.7 1.5l-1.2.8c-.4-.6-.8-.9-1.5-.9-.6 0-1.1.4-1.1.9 0 .6.5.9 1.4 1.2 1.5.6 2.8 1.1 2.8 2.7 0 1.5-1.2 2.5-3.1 2.5-1.5 0-2.6-.6-3.2-1.7l1.3-.8z" fill="#000"/></svg></span>
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Tech -->
+        <div class="tilt-card">
+          <div class="category-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+            <span>WEB TECHNOLOGIES</span>
+          </div>
+          <div class="pills-group">
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24"><path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3zm14.8 5.4H8.7l.2 2.3h8.5l-.6 6.7-4.8 1.3-4.8-1.3-.3-3.7h2.2l.2 1.8 2.7.7 2.7-.7.3-3.2H6.5L5.8 5.2h12.3l-.3 2.2z" fill="#E34F26"/></svg></span>
+              <span>HTML5</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24"><path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3zm14.8 5.4H8.7l.2 2.3h8.5l-.6 6.7-4.8 1.3-4.8-1.3-.3-3.7h2.2l.2 1.8 2.7.7 2.7-.7.3-3.2H6.5L5.8 5.2h12.3l-.3 2.2z" fill="#1572B6"/></svg></span>
+              <span>CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="tilt-card">
+          <div class="category-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6c0 1.66 3.58 3 8 3s8-1.34 8-3-3.58-3-8-3-8 1.34-8 3z"></path><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"></path></svg>
+            <span>DATABASES</span>
+          </div>
+          <div class="pills-group">
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21.5 14c-.6 2.6-3 4-5.5 3.5-1.8-.4-3-1.6-4.5-1.8-1.5-.2-3.2.7-4.2 1.8L6 16c2-2.5 4.5-3.5 7.5-3 2.5.4 4 2 5.5 1.5 1-.3 1.5-1.2 2-2l.5 1.5z" fill="#00758F"/><path d="M12 4c-3.5 0-6.5 2-8 5 2.5-1.2 5.5-1 7.5.5 2 1.5 3 4 5.5 4.5 2.5.5 5-.5 6-3-2.5 1-5.5.5-7.5-1-1.5-1.2-2.3-3.5-3.5-6z" fill="#F29111"/></svg></span>
+              <span>MySQL</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C11.5 4.5 7 9.5 7 14c0 3 2.2 5.5 5 5.8V2zm0 17.8c2.8-.3 5-2.8 5-5.8 0-4.5-4.5-9.5-5-12v17.8z" fill="#47A248"/></svg></span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="tilt-card">
+          <div class="category-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            <span>TOOLS</span>
+          </div>
+          <div class="pills-group">
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="#F05032"/></svg></span>
+              <span>Git &amp; GitHub</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-2.5 0-4 2-4 4.5 0 1.5.5 3 1.5 4-.5 1-1.5 2-2.5 4-.8 1.6-.2 3.5 1.5 3.5h7c1.7 0 2.3-1.9 1.5-3.5-1-2-2-3-2.5-4 1-1 1.5-2.5 1.5-4C16 5 14.5 3 12 3z" fill="#FCC624"/><circle cx="10.5" cy="6.5" r="1" fill="#000"/><circle cx="13.5" cy="6.5" r="1" fill="#000"/><path d="M11 9c.5.5 1.5.5 2 0" stroke="#E95420" stroke-width="1.5"/></svg></span>
+              <span>Linux</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17.5 2.5L7.2 10.7 3.5 7.8 1.5 9.2l3.3 2.8-3.3 2.8 2 1.4 3.7-2.9 10.3 8.2L22 19.5V4.5l-4.5-2z" fill="#007ACC"/><path d="M17.5 7.5L9.5 12l8 4.5V7.5z" fill="#fff" opacity="0.3"/></svg></span>
+              <span>VS Code</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><polygon points="12,2 22,8 22,16 12,22 2,16 2,8" stroke="#1B6AC6" stroke-width="2" fill="rgba(27,106,198,0.2)"/><line x1="12" y1="2" x2="12" y2="22" stroke="#1B6AC6" stroke-width="1.5"/><line x1="2" y1="8" x2="22" y2="8" stroke="#1B6AC6" stroke-width="1.5"/></svg></span>
+              <span>NetBeans</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="18" rx="3" stroke="#2563EB" stroke-width="2" fill="rgba(37,99,235,0.15)"/><text x="4" y="16" font-family="sans-serif" font-weight="900" font-size="9" fill="#2563EB">DEV</text></svg></span>
+              <span>DevC++</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="tilt-card">
+          <div class="category-head">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
+            <span>CORE CONCEPTS</span>
+          </div>
+          <div class="pills-group">
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><circle cx="12" cy="5" r="3"/><circle cx="6" cy="19" r="3"/><circle cx="18" cy="19" r="3"/><path d="M12 8v4m0 0l-5 4m5-4l5 4"/></svg></span>
+              <span>Data Structures</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><path d="M7 10v2a2 2 0 002 2h3m5-4v2a2 2 0 01-2 2h-3m0 0v2"/></svg></span>
+              <span>Algorithms</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+              <span>OOP</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2"><path d="M4 12h16M16 6l4 6-4 6M8 18l-4-6 4-6"/></svg></span>
+              <span>REST APIs</span>
+            </div>
+            <div class="tech-badge-pill">
+              <span class="tech-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
+              <span>COAL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 03: PROJECTS (FRONT) ==================== -->
+    <section class="section-stage" id="projects">
+      <div class="section-head-wrap">
+        <span class="section-mono-tag">02 / PROJECTS</span>
+        <h2 class="section-display-title">Selected work</h2>
+      </div>
+
+      <div class="projects-grid-layout">
+        <!-- AlphaWeb -->
+        <article class="project-card-box tilt-card">
+          <div>
+            <h3 class="proj-title">AlphaWeb</h3>
+            <div class="proj-tags-mono">Java • GUI • OOP</div>
+            <ul class="proj-bullets-list">
+              <li>Problem: Needed to create a fun and engaging word puzzle game.</li>
+              <li>Built an interactive Word Search and Hangman game using Java GUI and Object-Oriented Programming.</li>
+              <li>Structured the game logic clearly to provide a smooth user experience.</li>
+            </ul>
+          </div>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="repo-link">
+            <span>GitHub repository</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </article>
+
+        <!-- Biodiversity Corridor Design -->
+        <article class="project-card-box tilt-card">
+          <div>
+            <h3 class="proj-title">Biodiversity Corridor Design</h3>
+            <div class="proj-tags-mono">C++ • Data Structures</div>
+            <ul class="proj-bullets-list">
+              <li>Problem: Needed a way to plan safe travel routes for endangered animals to help prevent extinction.</li>
+              <li>Designed a simple console-based program in C++ to map out these biodiversity corridors.</li>
+              <li>Used efficient data structures to calculate and design the best possible paths.</li>
+            </ul>
+          </div>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="repo-link">
+            <span>GitHub repository</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </article>
+
+        <!-- Intelligent File Compression System -->
+        <article class="project-card-box tilt-card">
+          <div>
+            <h3 class="proj-title">Intelligent File Compression System</h3>
+            <div class="proj-tags-mono">Python • Algorithm</div>
+            <ul class="proj-bullets-list">
+              <li>Problem: Needed to efficiently reduce the size of large files to save storage space.</li>
+              <li>Developed a Python-based system that applies multiple algorithms to compress files.</li>
+              <li>Successfully reduced file sizes quickly and effectively through algorithmic optimization.</li>
+            </ul>
+          </div>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="repo-link">
+            <span>GitHub repository</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 04: EDUCATION (RIGHT THREE-QUARTER) ==================== -->
+    <section class="section-stage" id="education">
+      <div class="section-head-wrap">
+        <span class="section-mono-tag">04 / EDUCATION</span>
+        <h2 class="section-display-title">Academic background</h2>
+      </div>
+
+      <div class="edu-grid-layout">
+        <!-- Main BSCS Card -->
+        <div class="degree-card tilt-card">
+          <h3 class="deg-title">Bachelor of Science in Computer Science</h3>
+          <div class="deg-institution">Qarshi University, Lahore</div>
+          <div class="deg-meta">Expected 2028 &nbsp;•&nbsp; CGPA 2.7 / 4.0</div>
+
+          <div class="coursework-wrap">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--emerald-mint); letter-spacing: 0.1em; text-transform: uppercase;">RELEVANT COURSEWORK</div>
+            <div class="coursework-pills">
+              <span class="course-badge">Object-Oriented Programming</span>
+              <span class="course-badge">Data Structures &amp; Algorithms</span>
+              <span class="course-badge">Database Systems</span>
+              <span class="course-badge">Web Development</span>
+              <span class="course-badge">Software Engineering</span>
+              <span class="course-badge">Operating Systems</span>
+              <span class="course-badge">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subgrid: Earlier Ed & Certs -->
+        <div class="edu-subgrid">
+          <div class="tilt-card" style="padding: 1.8rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--emerald-mint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem;">EARLIER EDUCATION</div>
+            <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-headline); margin-bottom: 0.25rem;">Intermediate (ICS)</h4>
+            <div style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--text-muted);">Lahore • 2024</div>
+          </div>
+
+          <div class="tilt-card" style="padding: 1.8rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--emerald-mint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem;">CERTIFICATIONS</div>
+            <ul class="cert-list">
+              <li>Google AI Essential Certificate (Coursera)</li>
+              <li>Full Stack Development (Arfa Kareem)</li>
+              <li>Prompt Engineering Certificate (Qarshi University)</li>
+              <li>Google Project Management (Coursera)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 05: CONTACT (RIGHT PROFILE) ==================== -->
+    <section class="section-stage" id="contact">
+      <div class="section-head-wrap">
+        <span class="section-mono-tag">05 / CONTACT</span>
+        <h2 class="section-display-title">Get in touch</h2>
+      </div>
+
+      <div class="contact-layout-grid">
+        <div class="contact-info-col">
+          <p style="font-size: 1.05rem; color: var(--text-body); line-height: 1.7;">
+            Have an internship opening, open-source collaboration, or software development project? I'd love to hear from you.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">EMAIL</div>
+                <a href="mailto:syeda.shafia.haider@example.com" style="color: var(--text-headline); font-weight: 600; text-decoration: none;">syeda.shafia.haider@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">LOCATION</div>
+                <div style="color: var(--text-headline); font-weight: 600;">Lahore, Pakistan</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-bubble">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div>
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">STATUS</div>
+                <div style="color: var(--emerald-mint); font-weight: 600;">Open to internships &amp; collaborations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Card -->
+        <div class="tilt-card" style="padding: 2.25rem;">
+          <form class="form-wrapper" id="contact-form">
+            <div class="form-group-item">
+              <label class="form-label-mono">YOUR NAME</label>
+              <input type="text" class="form-input-field" placeholder="e.g. Alex Smith" required />
+            </div>
+
+            <div class="form-group-item">
+              <label class="form-label-mono">EMAIL ADDRESS</label>
+              <input type="email" class="form-input-field" placeholder="alex@example.com" required />
+            </div>
+
+            <div class="form-group-item">
+              <label class="form-label-mono">SUBJECT</label>
+              <input type="text" class="form-input-field" placeholder="Internship Opportunity / Inquiry" required />
+            </div>
+
+            <div class="form-group-item">
+              <label class="form-label-mono">MESSAGE</label>
+              <textarea class="form-textarea-field" placeholder="Hello Syeda Shafia..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-custom btn-custom-primary" style="width: 100%; margin-top: 0.5rem;">
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div style="font-size: 0.85rem; color: var(--text-muted);">
+        &copy; 2026 Syeda Shafia Haider • Computer Science Student &amp; Software Engineer
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--emerald-mint);">
+        "Turning tricky problems into clean, working software."
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast-msg-box" id="toast-msg-box">
+    Message sent successfully!
+  </div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/three-bg.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
